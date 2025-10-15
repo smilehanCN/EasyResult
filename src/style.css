@@ -1,0 +1,10 @@
+:root {
+  --page-padding: 16px;
+}
+body {
+  margin: 0;
+  background: #fff;
+}
+#app {
+  min-height: 100vh;
+}

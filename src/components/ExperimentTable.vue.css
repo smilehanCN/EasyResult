@@ -1,0 +1,466 @@
+/* ===== Nature/Science 风格配色方案 ===== */
+/* 主色(60%): 纯白 + 浅灰
+   次色(30%): 深蓝灰
+   强调色(10%): 科学蓝 */
+
+:root {
+  --primary-white: #ffffff;
+  --primary-gray: #f8f9fa;
+  --light-gray: #e9ecef;
+  --border-gray: #dee2e6;
+  
+  --secondary-blue-gray: #495057;
+  --secondary-dark-gray: #343a40;
+  --secondary-medium-gray: #6c757d;
+  
+  --accent-science-blue: #0066cc;
+  --accent-hover-blue: #0052a3;
+  --accent-light-blue: #e8f4fd;
+  
+  --text-primary: #212529;
+  --text-secondary: #6c757d;
+  --text-muted: #adb5bd;
+  
+  --success-green: #28a745;
+  --warning-orange: #fd7e14;
+  --danger-red: #dc3545;
+}
+
+/* ===== 整体布局 ===== */
+.experiment-dashboard {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  background-color: var(--primary-gray);
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* ===== 页面标题 ===== */
+.page-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 32px 24px;
+  background-color: var(--primary-white);
+  border-radius: 8px;
+  border: 1px solid var(--border-gray);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.page-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--accent-science-blue);
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+}
+
+.page-subtitle {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin: 0;
+  font-weight: 400;
+}
+
+/* ===== 卡片样式 ===== */
+.action-card, .filter-card, .visualization-card, .data-card {
+  background-color: var(--primary-white);
+  border: 1px solid var(--border-gray);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.action-card :deep(.ant-card-head),
+.filter-card :deep(.ant-card-head),
+.visualization-card :deep(.ant-card-head),
+.data-card :deep(.ant-card-head) {
+  background-color: var(--secondary-blue-gray);
+  border-bottom: 1px solid var(--border-gray);
+  padding: 16px 24px;
+  min-height: auto;
+}
+
+.action-card :deep(.ant-card-head-title),
+.filter-card :deep(.ant-card-head-title),
+.visualization-card :deep(.ant-card-head-title),
+.data-card :deep(.ant-card-head-title) {
+  color: var(--primary-white);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.action-card :deep(.ant-card-body),
+.filter-card :deep(.ant-card-body),
+.visualization-card :deep(.ant-card-body),
+.data-card :deep(.ant-card-body) {
+  padding: 24px;
+}
+
+/* ===== 卡片标题 ===== */
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary-white);
+  font-weight: 500;
+}
+
+.title-icon {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+/* ===== 输入框和按钮 ===== */
+.url-input {
+  min-width: 400px;
+  border-radius: 4px;
+  border-color: var(--border-gray);
+}
+
+.url-input:focus,
+.url-input:hover {
+  border-color: var(--accent-science-blue);
+  box-shadow: 0 0 0 2px var(--accent-light-blue);
+}
+
+.primary-btn {
+  background-color: var(--primary-white);
+  color: var(--secondary-blue-gray);
+  border: 1px solid var(--border-gray);
+  border-radius: 4px;
+  font-weight: 500;
+  height: 36px;
+  padding: 0 16px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.primary-btn:hover,
+.primary-btn:focus {
+  color: var(--accent-science-blue);
+  border-color: var(--accent-science-blue);
+  background-color: var(--accent-light-blue);
+}
+
+.upload-btn, .download-btn, .export-btn, .clear-btn {
+  background-color: var(--primary-white);
+  color: var(--secondary-blue-gray);
+  border: 1px solid var(--border-gray);
+  border-radius: 4px;
+  font-weight: 500;
+  height: 36px;
+  padding: 0 16px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.upload-btn:hover, .download-btn:hover, .export-btn:hover, .clear-btn:hover {
+  color: var(--accent-science-blue);
+  border-color: var(--accent-science-blue);
+  background-color: var(--accent-light-blue);
+}
+
+/* ===== 筛选区域 ===== */
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filter-label {
+  font-weight: 500;
+  color: var(--text-primary);
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.filter-select {
+  min-width: 200px;
+  border-radius: 4px;
+}
+
+.filter-select :deep(.ant-select-selector) {
+  border-color: var(--border-gray);
+}
+
+.filter-select :deep(.ant-select-selector:hover) {
+  border-color: var(--accent-science-blue);
+}
+
+.filter-select :deep(.ant-select-focused .ant-select-selector) {
+  border-color: var(--accent-science-blue);
+  box-shadow: 0 0 0 2px var(--accent-light-blue);
+}
+
+/* ===== 透视表格 ===== */
+.table-container {
+  overflow-x: auto;
+  border-radius: 6px;
+  border: none;
+  background-color: var(--primary-white);
+}
+
+.metrics-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: var(--primary-white);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.metrics-table th {
+  background-color: var(--secondary-blue-gray);
+  color: var(--primary-white);
+  padding: 12px 8px;
+  text-align: center;
+  font-weight: 500;
+  border: none;
+  position: relative;
+  font-size: 12px;
+}
+
+/* 移除所有纵向边框 */
+
+.metrics-table td {
+  padding: 10px 8px;
+  text-align: center;
+  border: none;
+  background-color: var(--primary-white);
+  transition: background-color 0.15s ease;
+  font-size: 12px;
+  color: var(--text-primary);
+}
+
+/* 移除所有纵向边框 */
+
+/* 取消所有框线 */
+
+.metrics-table tbody tr:hover td {
+  background-color: var(--primary-gray);
+}
+
+.dataset-cell {
+  background-color: var(--light-gray) !important;
+  font-weight: 500;
+  color: var(--secondary-blue-gray);
+  vertical-align: middle;
+  border: none !important;
+}
+
+/* ===== 拖拽相关样式 ===== */
+.draggable-model-header {
+  cursor: move;
+  user-select: none;
+  position: relative;
+}
+
+.drag-handle {
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 10px;
+  font-weight: normal;
+}
+
+.draggable-model-header:hover {
+  background-color: var(--accent-science-blue) !important;
+}
+
+/* ===== 最优值高亮 ===== */
+.metrics-table td.best {
+  background-color: #fff5f5 !important;
+  color: var(--danger-red);
+  font-weight: 600;
+  position: relative;
+}
+
+.metrics-table td.second {
+  background-color: #f0f8ff !important;
+  color: var(--accent-science-blue);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+
+/* ===== 数据表格 ===== */
+.data-table {
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--border-gray);
+}
+
+.data-table :deep(.ant-table-thead > tr > th) {
+  background-color: var(--secondary-blue-gray);
+  color: var(--primary-white);
+  font-weight: 500;
+  border-bottom: 1px solid var(--border-gray);
+  font-size: 13px;
+}
+
+.data-table :deep(.ant-table-tbody > tr > td) {
+  border-bottom: 1px solid var(--light-gray);
+  color: var(--text-primary);
+  font-size: 13px;
+}
+
+.data-table :deep(.ant-table-tbody > tr:hover > td) {
+  background-color: var(--primary-gray);
+}
+
+.data-table :deep(.ant-pagination) {
+  margin-top: 16px;
+}
+
+.data-table :deep(.ant-pagination-item-active) {
+  background-color: var(--accent-science-blue);
+  border-color: var(--accent-science-blue);
+}
+
+.data-table :deep(.ant-pagination-item-active a) {
+  color: var(--primary-white);
+}
+
+.text-cell {
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+/* ===== LaTeX 模态框 ===== */
+.latex-modal :deep(.ant-modal-header) {
+  background-color: var(--secondary-blue-gray);
+  border-bottom: 1px solid var(--border-gray);
+}
+
+.latex-modal :deep(.ant-modal-title) {
+  color: var(--primary-white);
+  font-weight: 500;
+}
+
+.latex-modal :deep(.ant-modal-content) {
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.latex-modal :deep(.ant-modal-body) {
+  padding: 24px;
+}
+
+.latex-code {
+  background-color: #f8f9fa;
+  border: 1px solid var(--border-gray);
+  border-radius: 4px;
+  padding: 16px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 12px;
+  line-height: 1.5;
+  max-height: 400px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-break: break-all;
+  color: var(--text-primary);
+}
+
+/* ===== 响应式设计 ===== */
+@media (max-width: 768px) {
+  .experiment-dashboard {
+    padding: 16px;
+  }
+  
+  .page-title {
+    font-size: 24px;
+  }
+  
+  .url-input {
+    min-width: 280px;
+  }
+  
+  .filter-select {
+    min-width: 150px;
+  }
+  
+  .metrics-table {
+    font-size: 11px;
+  }
+  
+  .metrics-table th,
+  .metrics-table td {
+    padding: 6px 4px;
+  }
+}
+
+/* ===== 滚动条美化 ===== */
+.table-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background-color: var(--light-gray);
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background-color: var(--text-muted);
+  border-radius: 3px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+  background-color: var(--secondary-medium-gray);
+}
+
+.latex-code::-webkit-scrollbar {
+  width: 6px;
+}
+
+.latex-code::-webkit-scrollbar-track {
+  background-color: var(--light-gray);
+}
+
+.latex-code::-webkit-scrollbar-thumb {
+  background-color: var(--text-muted);
+  border-radius: 3px;
+}
+
+.latex-code::-webkit-scrollbar-thumb:hover {
+  background-color: var(--secondary-medium-gray);
+}
+
+/* ===== 细节优化 ===== */
+.ant-space-item {
+  display: flex;
+  align-items: center;
+}
+
+/* 按钮图标对齐 */
+.primary-btn .anticon,
+.upload-btn .anticon,
+.download-btn .anticon,
+.export-btn .anticon,
+.clear-btn .anticon {
+  margin-right: 4px;
+}
+
+/* 表格数字对齐 */
+.metrics-table td[class*="best"],
+.metrics-table td[class*="second"] {
+  font-variant-numeric: tabular-nums;
+}
+
+/* 输入框前缀图标 */
+.url-input :deep(.ant-input-prefix) {
+  color: var(--text-muted);
+}
+
+/* 选择器标签样式 */
+.filter-select :deep(.ant-select-selection-item) {
+  background-color: var(--accent-light-blue);
+  color: var(--accent-science-blue);
+  border-color: var(--accent-science-blue);
+}
+
+/* 卡片间距调整 */
+.ant-space-vertical > .ant-space-item:not(:last-child) {
+  margin-bottom: 24px;
+}
