@@ -518,7 +518,7 @@ function onModelOrderChange() {
 }
 
 onMounted(() => {
-  csvUrl.value = '/results_sample.csv';
+  csvUrl.value = 'results_sample.csv';
   loadCsv();
 });
 
