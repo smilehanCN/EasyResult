@@ -4,6 +4,9 @@
     <div class="page-header">
       <h1 class="page-title">实验数据可视化系统</h1>
       <p class="page-subtitle">支持数据导入、筛选分析和多格式导出</p>
+      <a href="https://github.com/smilehanCN/EasyResult" target="_blank" class="github-link">
+        <span>📁</span> GitHub项目主页
+      </a>
     </div>
 
     <a-space direction="vertical" style="width:100%;" size="large">
